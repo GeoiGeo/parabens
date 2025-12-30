@@ -1,0 +1,128 @@
+/* === Estilos gerais === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+
+/* === Cabeçalho === */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+}
+
+.fotodela {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* === Estrutura principal === */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Esquerda - Centro - Direita */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* === Colunas === */
+aside, section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+aside h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* === Conteúdo central === */
+h1 {
+  text-align: center;
+}
+
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carrossel img {
+  width: 90%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.carrossel button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* === Rodapé === */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* === Responsividade === */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr; /* Fica uma coluna só no celular */
+  }
+
+  aside {
+    order: 2; /* Menus aparecem depois do conteúdo */
+  }
+
+  section {
+    order: 1;
+  }
+}
+ img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+ }
+
+ @media (max-width: 768px) {
+
+  header, nav, main, footer {
+    padding: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .colunas {
+    flex-direction: column;
+  }
+}
