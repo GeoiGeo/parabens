@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+<style>
+body{
+  background:#111;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  padding:20px;
+}
+
+.quiz{
+  max-width:400px;
+  margin:auto;
+  background:#1e1e1e;
+  padding:20px;
+  border-radius:10px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  background:#333;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#007bff;
+}
+</style>
+</head>
+<body>
+
+<a href="../index.html" style="color:#00aaff;">⬅ Voltar</a>
+
+<div class="quiz">
+  <h2 id="pergunta"></h2>
+  <div id="respostas"></div>
+  <p id="resultado"></p>
+</div>
+
+<script>
+const perguntas = [
+  {
+    pergunta: "Qual linguagem usamos para criar páginas web?",
+    respostas: ["Python","HTML","C++","Java"],
+    correta: 1
+  },
+  {
+    pergunta: "Qual tag cria um link?",
+    respostas: ["<a>","<div>","<img>","<p>"],
+    correta: 0
+  },
+  {
+    pergunta: "O que é CSS?",
+    respostas: ["Banco de dados","Linguagem de estilo","Sistema operacional","Framework"],
+    correta: 1
+  }
+];
+
+let atual = 0;
+let pontos = 0;
+
+function carregar(){
+  const p = perguntas[atual];
+  document.getElementById("pergunta").innerText = p.pergunta;
+  const box = document.getElementById("respostas");
+  box.innerHTML = "";
+
+  p.respostas.forEach((r,i)=>{
+    const btn = document.createElement("button");
+    btn.innerText = r;
+    btn.onclick = ()=>responder(i);
+    box.appendChild(btn);
+  });
+}
+
+function responder(i){
+  if(i === perguntas[atual].correta){
+    pontos++;
+  }
+
+  atual++;
+
+  if(atual < perguntas.length){
+    carregar();
+  }else{
+    document.getElementById("pergunta").innerText = "Fim do Quiz!";
+    document.getElementById("respostas").innerHTML = "";
+    document.getElementById("resultado").innerText = 
+      "Você acertou " + pontos + " de " + perguntas.length + " perguntas!";
+  }
+}
+
+carregar();
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

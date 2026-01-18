@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeria</title>
+  <link rel="stylesheet" href="/paginas/galeria.css">
+</head>
+<body>
+
+<nav class="topo">
+  <a href="../index.html">⬅ Voltar</a>
+</nav>
+
+<h1>Galeria</h1>
+
+<section class="galeria">
+  <img src="/midias/euiela.jpeg"onclick="abrir(this.src)">
+  <img src="/midias/gehbb.jpeg" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+  <img src="" onclick="abrir(this.src)">
+</section>
+
+<div id="modal" onclick="fechar()">
+  <img id="imgGrande">
+</div>
+
+<script>
+function abrir(src){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("imgGrande").src = src;
+}
+
+function fechar(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
